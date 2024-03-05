@@ -1,0 +1,17 @@
+version: "3"
+services:
+  vault:
+    image: vault:1.8.0
+    container_name: devnet_vault
+    ports:
+      - "8200:8200"
+    restart: always
+    volumes:
+      - ./logs:/vault/logs
+      - ./file:/vault/file
+      - ./config:/vault/config
+      - ./certs:/vault/certs
+    cap_add:
+      - IPC_LOCK
+    entrypoint: vault server -config=/vault/config/vault.json
+    command: server
