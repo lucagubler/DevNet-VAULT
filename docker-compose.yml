@@ -6,6 +6,8 @@ services:
     ports:
       - "8200:8200"
     restart: always
+    environment:
+      - VAULT_API_ADDR=https://0.0.0.0:8200
     volumes:
       - ./logs:/vault/logs
       - ./file:/vault/file

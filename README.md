@@ -7,7 +7,7 @@ Ensure you have Docker and Docker Compose installed on your machine. Then, follo
 
 1. Execute `docker-compose up -d` to start the Vault.
 2. Verify it using `docker ps -a`.
-3. Visit `localhost:8200`.
+3. Visit `https://localhost:8200`.
 
 ## Support
 For any issues or questions, feel free to open an issue in this repository.
