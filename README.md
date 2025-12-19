@@ -15,10 +15,11 @@ Before using the Vault CLI, set the following environment variables:
 
 ```bash
 export VAULT_ADDR=https://127.0.0.1:8200
-export VAULT_CACERT=/Users/lucagubler/src/DevNet-VAULT/certs/vault.crt
+export VAULT_CACERT=<absolute_path_to_repo>/certs/vault.crt
+export VAULT_TOKEN="s.wkFzpK95G7g5B6kh9myEBMM6"
 ```
 
-**Note:** Adjust the `VAULT_CACERT` path to match your local repository location.
+**Note:** Adjust the `VAULT_CACERT` path to match your local repository location. The `VAULT_TOKEN` should be set to your root token obtained after initializing Vault.
 
 ## Basic Commands
 
