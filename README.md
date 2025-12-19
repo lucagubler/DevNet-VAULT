@@ -9,6 +9,62 @@ Ensure you have Docker and Docker Compose installed on your machine. Then, follo
 2. Verify it using `docker ps -a`.
 3. Visit `https://localhost:8200`.
 
+## Environment Variables
+
+Before using the Vault CLI, set the following environment variables:
+
+```bash
+export VAULT_ADDR=https://127.0.0.1:8200
+export VAULT_CACERT=/Users/lucagubler/src/DevNet-VAULT/certs/vault.crt
+```
+
+**Note:** Adjust the `VAULT_CACERT` path to match your local repository location.
+
+## Basic Commands
+
+### Check Vault Status
+
+```bash
+vault status
+```
+
+Example output:
+```
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    1
+Threshold       1
+Version         1.8.0
+Build Date      n/a
+Storage Type    file
+Cluster Name    vault-cluster-ebf0f42f
+Cluster ID      732ffdf5-3f6b-a55e-72fd-e81d202a4415
+HA Enabled      false
+```
+
+### Initialize Vault
+
+If Vault is not initialized, run:
+
+```bash
+vault operator init
+```
+
+This will output unseal keys and an initial root token. **Save these securely!**
+
+### Unseal Vault
+
+If Vault is sealed, unseal it using:
+
+```bash
+vault operator unseal <unseal-key>
+```
+
+For a single unseal key setup, you'll need to run this once.
+
 ## Support
 For any issues or questions, feel free to open an issue in this repository.
 
